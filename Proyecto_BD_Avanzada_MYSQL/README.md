@@ -7,7 +7,30 @@ Este proyecto diseña e implementa el núcleo de una base de datos MySQL 8.0 par
 ## Integrantes
 
 - Lesli Zuñiga
+## Diagrama de Base de Datos y Modelo Entidad-Relación
 
+A continuación se incluyen capturas del diagrama relacional diseñado en MySQL Workbench, organizadas por la vista global de la base de datos y el desglose de sus módulos principales:
+
+### 1. Vista Global del Esquema ER
+![Diagrama ER Completo del E-commerce](./f1.png)
+
+### 2. Módulo Core: Clientes, Promociones, Productos y Ventas Archivadas
+![Clientes, Log de Intentos de Login, Promociones, Productos y Ventas Archivadas](./f2.png)
+![Detalle de Entidades Clientes, Promociones y Productos](./f3.png)
+![Segmentación RFM, Referidos de Clientes, Productos y Ventas](./f4.png)
+
+### 3. Módulo de Ventas, Transacciones y Auditoría
+![Relación entre Promociones, Productos, Referidos, Ventas, Respaldo Log, Staging y Auditoría de Clientes](./f5.png)
+![Sucursales, Detalle de Ventas, Productos Relacionados, Alertas de Stock, Log de Cambios de Precio y Mapeo Usuario-Sucursal](./f9.png)
+
+### 4. Módulo de Analítica, KPIs y Control de Fraude
+![KPIs Mensuales, Reporte de Ventas Semanal y Logs de Inconsistencia/Fraude/Ajustes de Stock](./f6.png)
+![KPIs, Reporte Semanal, Respaldo Log, Staging, Carritos Abandonados y Reseñas de Productos](./f7.png)
+
+### 5. Módulo de Respaldos, Logs y Configuración
+![Respaldos de Clientes, Productos y Ventas, Notificaciones, Log de Permisos, Ventas Archivadas y Configuración del Sistema](./f8.png)
+
+---
 ## Motor de base de datos
 
 MySQL 8.0 (probado contra `mysql:8.0` vía Docker). El proyecto usa características de MySQL 8 como funciones de ventana (`NTILE`, `LAG`, `RANK`), CTEs, `CHECK` constraints, columnas generadas (`GENERATED ALWAYS AS ... STORED`), roles (`CREATE ROLE`) y el Event Scheduler.
